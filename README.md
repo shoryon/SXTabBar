@@ -2,6 +2,7 @@
 自定义标签控制器
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+- 
     // Override point for customization after application launch.
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
@@ -63,4 +64,5 @@
     UINavigationController *navigationMiddleViewController = [[UINavigationController alloc] initWithRootViewController:middleViewController];
     
     [self.tabBarController presentViewController:navigationMiddleViewController animated:YES completion:nil];
+    
 }
