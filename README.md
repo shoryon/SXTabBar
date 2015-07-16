@@ -1,6 +1,8 @@
 # SXTabBar
 自定义标签控制器
 
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 - 
     // Override point for customization after application launch.
