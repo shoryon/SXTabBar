@@ -12,7 +12,9 @@
 #import "SXTabBarPopupModel.h"
 
 @interface SXTabBarController : UITabBarController
-
+/**
+ *  自定义标签条
+ */
 @property (nonatomic, weak) SXTabBar *customTabBar;
 @property (nonatomic, strong) NSArray *items;
 

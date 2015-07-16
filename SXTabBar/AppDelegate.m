@@ -30,19 +30,19 @@
     
     SXTabBarController *tabBarController = [[SXTabBarController alloc] init];
     
-    //首页
+    //第一个视图控制器
     FirstViewController *homeViewController = [[FirstViewController alloc] init];
     UINavigationController *navigationHomeViewController = [[UINavigationController alloc] initWithRootViewController:homeViewController];
     
-    //彩种
+    //第二个视图控制器
     SecondViewController *colorStationViewController = [[SecondViewController alloc] init];
     UINavigationController *navigationColorStationViewController = [[UINavigationController alloc] initWithRootViewController:colorStationViewController];
     
-    //开奖信息
+    //第三个视图控制器
     ThirdViewController *informationViewController = [[ThirdViewController alloc] init];
     UINavigationController *navigationInformationViewController = [[UINavigationController alloc] initWithRootViewController:informationViewController];
     
-    //个人信息
+    //第四个视图控制器
     FourthViewController *memberViewController = [[FourthViewController alloc] init];
     UINavigationController *navigationMemberViewController = [[UINavigationController alloc] initWithRootViewController:memberViewController];
     
@@ -74,6 +74,7 @@
 }
 
 - (void)popupToVc {
+    //选项卡中间视图控制器
     MiddleViewController *middleViewController = [[MiddleViewController alloc] init];
     UINavigationController *navigationMiddleViewController = [[UINavigationController alloc] initWithRootViewController:middleViewController];
     [self.tabBarController presentViewController:navigationMiddleViewController animated:YES completion:nil];

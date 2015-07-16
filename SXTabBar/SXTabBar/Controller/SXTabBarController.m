@@ -14,6 +14,9 @@
 #import "MiddleViewController.h"
 
 #define kScreenWidth [[UIScreen mainScreen] bounds].size.width
+/**
+ *  中间图片凸起来的高度
+ */
 #define kTabBarTransparentOverH (kScreenWidth > 320 ? 20.0f : 10.0f)
 
 @interface SXTabBarController () <SXTabBarDelegate>
