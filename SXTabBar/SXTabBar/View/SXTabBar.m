@@ -98,18 +98,17 @@
     
     [super layoutSubviews];
     
-    CGFloat gridW = self.frame.size.width / self.subviews.count;
-    CGFloat gridH = self.frame.size.height;
+    CGFloat itemY = 0;
+    CGFloat itemW = self.frame.size.width / self.subviews.count;
+    CGFloat itemH = self.frame.size.height;
     
     for (int i = 0; i < self.subviews.count ; i++) {
         
         id item = self.subviews[i];
         
+        CGFloat itemX = i * itemW;
+        
         // 设置item的frame
-        CGFloat itemW = gridW;
-        CGFloat itemH = self.frame.size.height;
-        CGFloat itemY = (gridH - itemH) * 0.5;
-        CGFloat itemX = i * gridW + (gridW - itemW) * 0.5;
         [item setFrame:CGRectMake(itemX, itemY, itemW, itemH)];
         
         // 设置按钮的Tag作为将来切换子控制器的索引

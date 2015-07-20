@@ -54,7 +54,7 @@
                                             highlightedImage:@"tabbar_item_betting_selected"
                                                      childVc:navigationColorStationViewController],
                                [SXTabBarPopupModel modelWithImage:@"tabbar_item_interaction"
-                                            highlightedImage:@"tabbar_item_interaction_selected"
+                                                 highlightedImage:@"tabbar_item_interaction_selected"
                                                            target:self
                                                            action:@selector(popupToVc)],
                                [SXTabBarModel modelWithImage:@"tabbar_item_information"
