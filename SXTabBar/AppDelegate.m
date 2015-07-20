@@ -14,6 +14,8 @@
 #import "FourthViewController.h"
 #import "MiddleViewController.h"
 
+#define kScreenWidth [[UIScreen mainScreen] bounds].size.width
+
 @interface AppDelegate ()
 
 @property (nonatomic, strong) SXTabBarController *tabBarController;
@@ -21,7 +23,6 @@
 @end
 
 @implementation AppDelegate
-
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
@@ -63,6 +64,8 @@
                                [SXTabBarModel modelWithImage:@"tabbar_item_mine"
                                             highlightedImage:@"tabbar_item_mine_selected"
                                                      childVc:navigationMemberViewController]];
+    // 自定义tabbar高度
+    tabBarController.customHeight = (kScreenWidth > 320 ? 69.0f : 59.0f);
     
     self.tabBarController = tabBarController;
     

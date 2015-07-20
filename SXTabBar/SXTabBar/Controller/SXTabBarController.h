@@ -16,6 +16,13 @@
  *  自定义标签条
  */
 @property (nonatomic, weak) SXTabBar *customTabBar;
+/**
+ *  自定义tabbar子菜单项
+ */
 @property (nonatomic, strong) NSArray *items;
+/**
+ *  自定义tabbar高度
+ */
+@property (nonatomic, assign) CGFloat customHeight;
 
 @end

@@ -7,17 +7,6 @@
 //
 
 #import "SXTabBarController.h"
-#import "FirstViewController.h"
-#import "SecondViewController.h"
-#import "ThirdViewController.h"
-#import "FourthViewController.h"
-#import "MiddleViewController.h"
-
-#define kScreenWidth [[UIScreen mainScreen] bounds].size.width
-/**
- *  中间图片凸起来的高度
- */
-#define kTabBarTransparentOverH (kScreenWidth > 320 ? 20.0f : 10.0f)
 
 @interface SXTabBarController () <SXTabBarDelegate>
 
@@ -28,7 +17,7 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-
+    
     // 初始化tabbar
     [self setupTabbar];
 }
@@ -64,23 +53,33 @@
  */
 - (void)setupTabbar {
     
-    CGRect tabBarFrame = self.tabBar.frame;
+    CGRect baseFrame = self.tabBar.frame;
     
     //移除系统自带的tabbar
     [self.tabBar removeFromSuperview];
     
-    CGFloat tabBarX = tabBarFrame.origin.x;
-    CGFloat tabBarY = tabBarFrame.origin.y - kTabBarTransparentOverH;
-    CGFloat tabBarW = tabBarFrame.size.width;
-    CGFloat tabBarH = tabBarFrame.size.height + kTabBarTransparentOverH;
-    
-    SXTabBar *customTabBar = [[SXTabBar alloc] initWithFrame:CGRectMake(tabBarX, tabBarY, tabBarW, tabBarH)];
+    SXTabBar *customTabBar = [[SXTabBar alloc] initWithFrame:baseFrame];
     
     customTabBar.delegate = self;
     
     [self.view addSubview:customTabBar];
     
     self.customTabBar = customTabBar;
+}
+
+/**
+ *  自定义高度
+ */
+- (void)setCustomHeight:(CGFloat)customHeight {
+    
+    _customHeight = customHeight;
+    
+    CGFloat customTabBarH = self.customHeight;
+    CGFloat customTabBarX = self.customTabBar.frame.origin.x;
+    CGFloat customTabBarY = self.customTabBar.frame.origin.y - (customTabBarH - self.customTabBar.frame.size.height);
+    CGFloat customTabBarW = self.customTabBar.frame.size.width;
+    
+    self.customTabBar.frame = CGRectMake(customTabBarX, customTabBarY, customTabBarW, customTabBarH);
 }
 
 #pragma mark - tabBar delegate
