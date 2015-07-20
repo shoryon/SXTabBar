@@ -48,7 +48,7 @@
 - (void)addItemWithImage:(NSString *)image highlightedImage:(NSString *)highlightedImage {
     
     // 3.1创建按钮
-    SXTabBarItem *item = [[SXTabBarItem alloc] init];
+    SXTabBarItem *item = [SXTabBarItem buttonWithType:UIButtonTypeCustom];
     
     // 3.2设置按钮上显示的图片
     // 3.2.1设置默认状态图片
@@ -75,7 +75,7 @@
 - (void)addPopupItemWithImage:(NSString *)image highlightedImage:(NSString *)highlightedImage target:(id)target action:(SEL)action {
     
     // 3.1创建按钮
-    SXTabBarPopupItem *item = [[SXTabBarPopupItem alloc] init];
+    SXTabBarPopupItem *item = [SXTabBarItem buttonWithType:UIButtonTypeCustom];
     
     // 3.2设置按钮上显示的图片
     // 3.2.1设置默认状态图片
@@ -99,14 +99,22 @@
     [super layoutSubviews];
     
     CGFloat itemY = 0;
-    CGFloat itemW = self.frame.size.width / self.subviews.count;
+    CGFloat itemW = roundf(self.frame.size.width / self.subviews.count); //解决item宽度出现浮点数的BUG
     CGFloat itemH = self.frame.size.height;
     
-    for (int i = 0; i < self.subviews.count ; i++) {
+    NSInteger count = self.subviews.count;
+    
+    for (NSUInteger i = 0; i < count ; i++) {
         
         id item = self.subviews[i];
         
         CGFloat itemX = i * itemW;
+        
+        // 调整最后一个item的位置且占满tabbar
+        if (i == count - 1) {
+            itemX = (count - 1) * itemW;
+            itemW = self.frame.size.width - itemX;
+        }
         
         // 设置item的frame
         [item setFrame:CGRectMake(itemX, itemY, itemW, itemH)];
