@@ -98,29 +98,32 @@
     
     [super layoutSubviews];
     
+    NSInteger itemCount = self.subviews.count;
+    
+    CGFloat tabBarW = self.frame.size.width;
+    CGFloat tabBarH = self.frame.size.height;
+    
     CGFloat itemY = 0;
-    CGFloat itemW = roundf(self.frame.size.width / self.subviews.count); //解决item宽度出现浮点数的BUG
-    CGFloat itemH = self.frame.size.height;
+    CGFloat itemW = tabBarW / itemCount - 0.1f; //解决item宽度出现浮点数的BUG
+    CGFloat itemH = tabBarH;
     
-    NSInteger count = self.subviews.count;
-    
-    for (NSUInteger i = 0; i < count ; i++) {
+    for (NSUInteger index = 0; index < itemCount ; index++) {
         
-        id item = self.subviews[i];
+        id item = self.subviews[index];
         
-        CGFloat itemX = i * itemW;
+        CGFloat itemX = index * itemW;
         
         // 调整最后一个item的位置且占满tabbar
-        if (i == count - 1) {
-            itemX = (count - 1) * itemW;
-            itemW = self.frame.size.width - itemX;
+        if (index == itemCount - 1) {
+            itemX = (itemCount - 1) * itemW;
+            itemW = tabBarW - itemX;
         }
         
         // 设置item的frame
         [item setFrame:CGRectMake(itemX, itemY, itemW, itemH)];
         
         // 设置按钮的Tag作为将来切换子控制器的索引
-        [item setTag:i];
+        [item setTag:index];
     }
 }
 
