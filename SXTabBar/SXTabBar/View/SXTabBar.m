@@ -104,17 +104,19 @@
     CGFloat tabBarH = self.frame.size.height;
     
     CGFloat itemY = 0;
-    CGFloat itemW = tabBarW / itemCount - 0.1f; //解决item宽度出现浮点数的BUG
+    CGFloat itemW = tabBarW / itemCount;
     CGFloat itemH = tabBarH;
+    
+    //解决item宽度出现浮点数的BUG
+    itemW = !fmod(tabBarW, itemCount) ? itemW - 1.0f : itemW;
     
     for (NSUInteger index = 0; index < itemCount ; index++) {
         
-        id item = self.subviews[index];
+        UIButton *item = self.subviews[index];
         
         CGFloat itemX = index * itemW;
         
-        // 调整最后一个item的位置且占满tabbar
-        if (index == itemCount - 1) {
+        if (index == itemCount - 1) { // 调整最后一个item的位置且占满tabbar
             itemX = (itemCount - 1) * itemW;
             itemW = tabBarW - itemX;
         }
