@@ -1,7 +1,7 @@
 # SXTabBar
-自定义标签控制器
+# 自定义标签控制器
 
-
+example:
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 - 
