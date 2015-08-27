@@ -65,7 +65,7 @@
                                             highlightedImage:@"tabbar_item_mine_selected"
                                                      childVc:navigationMemberViewController]];
     // 自定义tabbar高度
-    tabBarController.customHeight = (kScreenWidth > 320 ? 69.0f : 59.0f);
+    tabBarController.customHeight = 63.0f;
     
     self.tabBarController = tabBarController;
     

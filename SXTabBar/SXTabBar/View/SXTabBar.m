@@ -8,6 +8,8 @@
 
 #import "SXTabBar.h"
 
+#define kItemImageSize CGSizeMake(72, 63) //图片的实际大小
+
 @interface SXTabBar ()
 
 /**
@@ -103,9 +105,14 @@
     CGFloat tabBarW = self.frame.size.width;
     CGFloat tabBarH = self.frame.size.height;
     
-    CGFloat itemY = 0;
     CGFloat itemW = tabBarW / itemCount;
     CGFloat itemH = tabBarH;
+    
+    CGFloat buttonW = kItemImageSize.width;
+    CGFloat buttonH = kItemImageSize.height;
+    CGFloat buttonY = itemH * 0.5 - buttonH * 0.5;
+    
+    CGFloat border = itemW * 0.5 - buttonW * 0.5;
     
     //解决item宽度出现浮点数的BUG
     itemW = !fmod(tabBarW, itemCount) ? itemW - 1.0f : itemW;
@@ -114,15 +121,15 @@
         
         UIButton *item = self.subviews[index];
         
-        CGFloat itemX = index * itemW;
+        CGFloat buttonX = index * (buttonW + border * 2) + border;
         
-        if (index == itemCount - 1) { // 调整最后一个item的位置且占满tabbar
-            itemX = (itemCount - 1) * itemW;
-            itemW = tabBarW - itemX;
+        // 调整最后一个item的位置且占满tabbar
+        if (index == itemCount - 1) {
+            buttonX = (itemCount - 1) * (buttonW + border * 2) + border;
         }
         
         // 设置item的frame
-        [item setFrame:CGRectMake(itemX, itemY, itemW, itemH)];
+        [item setFrame:CGRectMake(buttonX, buttonY, buttonW, buttonH)];
         
         // 设置按钮的Tag作为将来切换子控制器的索引
         [item setTag:index];
