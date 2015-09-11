@@ -25,4 +25,6 @@
  */
 @property (nonatomic, assign) CGFloat customHeight;
 
++ (instancetype)tabBarController;
+
 @end

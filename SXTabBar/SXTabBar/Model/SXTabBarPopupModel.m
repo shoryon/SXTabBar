@@ -10,7 +10,10 @@
 
 @implementation SXTabBarPopupModel
 
-- (instancetype)initWithImage:(NSString *)image highlightedImage:(NSString *)highlightedImage target:(id)target action:(SEL)action {
+- (instancetype)initWithImage:(NSString *)image
+             highlightedImage:(NSString *)highlightedImage
+                       target:(id)target
+                       action:(SEL)action {
     if (self = [super init]) {
         self.image = image;
         self.highlightedImage = highlightedImage;
@@ -20,14 +23,14 @@
     return self;
 }
 
-+ (instancetype)initWithImage:(NSString *)image highlightedImage:(NSString *)highlightedImage target:(id)target action:(SEL)action {
-    
-    return [[self alloc] initWithImage:image highlightedImage:highlightedImage target:target action:action];
-}
-
-+ (instancetype)modelWithImage:(NSString *)image highlightedImage:(NSString *)highlightedImage target:(id)target action:(SEL)action {
-    
-    return [[self alloc] initWithImage:image highlightedImage:highlightedImage target:target action:action];
++ (instancetype)modelWithImage:(NSString *)image
+              highlightedImage:(NSString *)highlightedImage
+                        target:(id)target
+                        action:(SEL)action {
+    return [[self alloc] initWithImage:image
+                      highlightedImage:highlightedImage
+                                target:target
+                                action:action];
 }
 
 @end

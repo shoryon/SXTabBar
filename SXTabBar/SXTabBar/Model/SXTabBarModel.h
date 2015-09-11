@@ -14,8 +14,11 @@
 @property (nonatomic, copy) NSString *highlightedImage;
 @property (nonatomic, strong) UIViewController *childVc;
 
-- (instancetype)initWithImage:(NSString *)image highlightedImage:(NSString *)highlightedImage childVc:(UIViewController *)childVc;
-+ (instancetype)initWithImage:(NSString *)image highlightedImage:(NSString *)highlightedImage childVc:(UIViewController *)childVc;
-+ (instancetype)modelWithImage:(NSString *)image highlightedImage:(NSString *)highlightedImage childVc:(UIViewController *)childVc;
+- (instancetype)initWithImage:(NSString *)image
+             highlightedImage:(NSString *)highlightedImage
+                      childVc:(UIViewController *)childVc;
++ (instancetype)modelWithImage:(NSString *)image
+              highlightedImage:(NSString *)highlightedImage
+                       childVc:(UIViewController *)childVc;
 
 @end

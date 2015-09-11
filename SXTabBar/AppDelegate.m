@@ -25,29 +25,28 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
-    SXTabBarController *tabBarController = [[SXTabBarController alloc] init];
+    SXTabBarController *tabBarController = [SXTabBarController tabBarController];
     
-    //第一个视图控制器
+    // 第一个视图控制器
     FirstViewController *homeViewController = [[FirstViewController alloc] init];
     UINavigationController *navigationHomeViewController = [[UINavigationController alloc] initWithRootViewController:homeViewController];
     
-    //第二个视图控制器
+    // 第二个视图控制器
     SecondViewController *colorStationViewController = [[SecondViewController alloc] init];
     UINavigationController *navigationColorStationViewController = [[UINavigationController alloc] initWithRootViewController:colorStationViewController];
     
-    //第三个视图控制器
+    // 第三个视图控制器
     ThirdViewController *informationViewController = [[ThirdViewController alloc] init];
     UINavigationController *navigationInformationViewController = [[UINavigationController alloc] initWithRootViewController:informationViewController];
     
-    //第四个视图控制器
+    // 第四个视图控制器
     FourthViewController *memberViewController = [[FourthViewController alloc] init];
     UINavigationController *navigationMemberViewController = [[UINavigationController alloc] initWithRootViewController:memberViewController];
     
-    //设置子控制器
+    // 设置子控制器
     tabBarController.items = @[[SXTabBarModel modelWithImage:@"tabbar_item_home"
                                             highlightedImage:@"tabbar_item_home_selected"
                                                      childVc:navigationHomeViewController],

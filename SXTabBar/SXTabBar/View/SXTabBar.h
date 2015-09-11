@@ -24,7 +24,6 @@
 @interface SXTabBar : UIView
 
 @property (nonatomic, assign) NSInteger selectedIndex;
-
 @property (nonatomic, weak) id<SXTabBarDelegate> delegate;
 
 /**
@@ -33,13 +32,17 @@
  *  @param image            普通图片
  *  @param highlightedImage 高亮图片
  */
-- (void)addItemWithImage:(NSString *)image highlightedImage:(NSString *)highlightedImage;
+- (void)addItemWithImage:(NSString *)image
+        highlightedImage:(NSString *)highlightedImage;
 /**
  *  设置TabBar中的item项(弹出)
  *
  *  @param image            普通图片
  *  @param highlightedImage 高亮图片
  */
-- (void)addPopupItemWithImage:(NSString *)image highlightedImage:(NSString *)highlightedImage target:(id)target action:(SEL)action ;
+- (void)addPopupItemWithImage:(NSString *)image
+             highlightedImage:(NSString *)highlightedImage
+                       target:(id)target
+                       action:(SEL)action ;
 
 @end

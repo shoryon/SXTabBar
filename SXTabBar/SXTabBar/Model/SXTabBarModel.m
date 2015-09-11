@@ -10,7 +10,9 @@
 
 @implementation SXTabBarModel
 
-- (instancetype)initWithImage:(NSString *)image highlightedImage:(NSString *)highlightedImage childVc:(UIViewController *)childVc {
+- (instancetype)initWithImage:(NSString *)image
+             highlightedImage:(NSString *)highlightedImage
+                      childVc:(UIViewController *)childVc {
     if (self = [super init]) {
         self.image = image;
         self.highlightedImage = highlightedImage;
@@ -19,14 +21,12 @@
     return self;
 }
 
-+ (instancetype)initWithImage:(NSString *)image highlightedImage:(NSString *)highlightedImage childVc:(UIViewController *)childVc {
-    
-    return [[self alloc] initWithImage:image highlightedImage:highlightedImage childVc:childVc];
-}
-
-+ (instancetype)modelWithImage:(NSString *)image highlightedImage:(NSString *)highlightedImage childVc:(UIViewController *)childVc {
-    
-    return [[self alloc] initWithImage:image highlightedImage:highlightedImage childVc:childVc];
++ (instancetype)modelWithImage:(NSString *)image
+              highlightedImage:(NSString *)highlightedImage
+                       childVc:(UIViewController *)childVc {
+    return [[self alloc] initWithImage:image
+                      highlightedImage:highlightedImage
+                               childVc:childVc];
 }
 
 @end

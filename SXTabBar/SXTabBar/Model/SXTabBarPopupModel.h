@@ -15,8 +15,13 @@
 @property (nonatomic, strong) id target;
 @property (nonatomic, assign) SEL action;
 
-- (instancetype)initWithImage:(NSString *)image highlightedImage:(NSString *)highlightedImage target:(id)target action:(SEL)action;
-+ (instancetype)initWithImage:(NSString *)image highlightedImage:(NSString *)highlightedImage target:(id)target action:(SEL)action;
-+ (instancetype)modelWithImage:(NSString *)image highlightedImage:(NSString *)highlightedImage target:(id)target action:(SEL)action;
+- (instancetype)initWithImage:(NSString *)image
+             highlightedImage:(NSString *)highlightedImage
+                       target:(id)target
+                       action:(SEL)action;
++ (instancetype)modelWithImage:(NSString *)image
+              highlightedImage:(NSString *)highlightedImage
+                        target:(id)target
+                        action:(SEL)action;
 
 @end

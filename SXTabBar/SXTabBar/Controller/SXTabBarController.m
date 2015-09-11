@@ -14,6 +14,11 @@
 
 @implementation SXTabBarController
 
++ (instancetype)tabBarController {
+    
+    return [[self alloc] init];
+}
+
 - (void)viewDidLoad {
     
     [super viewDidLoad];

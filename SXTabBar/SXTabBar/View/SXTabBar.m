@@ -47,7 +47,8 @@
     [self setBackgroundColor:[UIColor clearColor]];
 }
 
-- (void)addItemWithImage:(NSString *)image highlightedImage:(NSString *)highlightedImage {
+- (void)addItemWithImage:(NSString *)image
+        highlightedImage:(NSString *)highlightedImage {
     
     // 3.1创建按钮
     SXTabBarItem *item = [SXTabBarItem buttonWithType:UIButtonTypeCustom];
@@ -74,7 +75,10 @@
     [item setAdjustsImageWhenHighlighted:NO];
 }
 
-- (void)addPopupItemWithImage:(NSString *)image highlightedImage:(NSString *)highlightedImage target:(id)target action:(SEL)action {
+- (void)addPopupItemWithImage:(NSString *)image
+             highlightedImage:(NSString *)highlightedImage
+                       target:(id)target
+                       action:(SEL)action {
     
     // 3.1创建按钮
     SXTabBarPopupItem *item = [SXTabBarItem buttonWithType:UIButtonTypeCustom];
